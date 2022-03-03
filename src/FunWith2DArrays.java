@@ -17,4 +17,34 @@ public class FunWith2DArrays
         System.out.println(arr[arr.length-1][0]);
         System.out.println(arr[arr.length-1][arr[0].length-1]);
     }
+
+    public static double average(int[][] arr)
+    {
+        double sum = 0;
+        int length = 0;
+        for (int[] row : arr)
+        {
+            for (int num : row)
+            {
+                sum += num;
+                length++;
+            }
+        }
+        return sum / length;
+    }
+
+    public static int[] indexFound(String[][] arr, String target)
+    {
+        for (int row = 0; row < arr.length; row++)
+        {
+            for (int col = 0; col < arr[0].length; col++)
+            {
+                if (target.equals(arr[row][col]))
+                {
+                    return new int[]{row, col};
+                }
+            }
+        }
+        return new int[]{-1, -1};
+    }
 }
